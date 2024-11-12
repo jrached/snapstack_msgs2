@@ -118,7 +118,7 @@ rosidl_generateg_interfaces(${PROJECT_NAME}
 
 #ROS2:
 ament_export_dependencies(
-  message_runtime
+  rosidl_default_runtime
   std_msgs
   geometry_msgs
   nav_msgs
