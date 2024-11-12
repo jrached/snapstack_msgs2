@@ -84,17 +84,17 @@ find_package(std_srvs REQUIRED)
 
 # ROS2
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "ControlLog.msg"
-  "AttitudeCommand.msg"
-  "Goal.msg"
-  "QuadFlightMode.msg"
-  "State.msg"
-  "CommAge.msg"
-  "IMU.msg"
-  "SMCData.msg"
-  "Motors.msg"
-  "VioFilterState.msg"
-  "TimeFilter.msg"
+  "msg/ControlLog.msg"
+  "msg/AttitudeCommand.msg"
+  "msg/Goal.msg"
+  "msg/QuadFlightMode.msg"
+  "msg/State.msg"
+  "msg/CommAge.msg"
+  "msg/IMU.msg"
+  "msg/SMCData.msg"
+  "msg/Motors.msg"
+  "msg/VioFilterState.msg"
+  "msg/TimeFilter.msg"
   DEPENDENCIES std_msgs geometry_msgs nav_msgs 
 )
 
