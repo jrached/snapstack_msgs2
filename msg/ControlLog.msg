@@ -1,6 +1,6 @@
 # The outer loop trajectory tracker generates this msg for analysis / debugging
 
-Header header
+std_msgs/Header header
 
 # position signals
 geometry_msgs/Vector3 p
@@ -31,7 +31,7 @@ geometry_msgs/Vector3 rpy_ref
 geometry_msgs/Vector3 w
 geometry_msgs/Vector3 w_ref
 
-geometry_msgs/Vector3 F_W # Desired total force [N], expressed in world
+geometry_msgs/Vector3 f_w # Desired total force [N], expressed in world
 
 bool power # true if motors should be able to spin
 

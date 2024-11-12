@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 uint8 mode
 uint8 NOT_FLYING   = 0
 uint8 TAKEOFF      = 1

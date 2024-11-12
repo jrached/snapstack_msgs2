@@ -1,6 +1,6 @@
 # TimeFilter.msg
 
-Header header
+std_msgs/Header header
 float32 dt  	# dt recorded in time stamp
 float32 delayed_dt  # dt stamped when arrived onboard
 bool skipped	# is msg skipped?

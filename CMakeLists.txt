@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14.4)
-project(snapstack_msgs)
+project(snapstack_msgs2)
 
 # ROS1:
 # find_package(catkin REQUIRED COMPONENTS
@@ -95,7 +95,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Motors.msg"
   "msg/VioFilterState.msg"
   "msg/TimeFilter.msg"
-  DEPENDENCIES std_msgs geometry_msgs nav_msgs 
+  DEPENDENCIES std_msgs geometry_msgs nav_msgs builtin_interfaces
 )
 
 ###################################

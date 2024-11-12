@@ -9,6 +9,6 @@ geometry_msgs/Pose extrinsics  # camera-to-IMU transform
 
 geometry_msgs/Vector3 accel_meas  # (IMU-frame) raw accel measurement
 
-int32 N  # error state dimension
+int32 n  # error state dimension N
 float32[] error_cov  # NxN error covariance.
                      # For consistency, leading 21 terms are ordered [pos, vel, Rwb, bw, ba, Rcb, tcb].
