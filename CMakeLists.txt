@@ -82,7 +82,7 @@ find_package(std_srvs REQUIRED)
 # )
 
 # ROS2
-rosidl_generateg_interfaces(${PROJECT_NAME}
+rosidl_generate_interfaces(${PROJECT_NAME}
   "ControlLog.msg"
   "AttitudeCommand.msg"
   "Goal.msg"
