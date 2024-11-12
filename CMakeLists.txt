@@ -1,13 +1,20 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.14.4)
 project(snapstack_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  std_msgs
-  geometry_msgs
-  nav_msgs
-  std_srvs
-)
+# ROS1:
+# find_package(catkin REQUIRED COMPONENTS
+#   message_generation
+#   std_msgs
+#   geometry_msgs
+#   nav_msgs
+#   std_srvs
+# )
+
+find_package(message_generation REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -34,20 +41,22 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  ControlLog.msg
-  AttitudeCommand.msg
-  Goal.msg
-  QuadFlightMode.msg
-  State.msg
-  CommAge.msg
-  IMU.msg
-  SMCData.msg
-  Motors.msg
-  VioFilterState.msg
-  TimeFilter.msg
-)
+# ROS1
+# add_message_files(
+#   FILES
+#   ControlLog.msg
+#   AttitudeCommand.msg
+#   Goal.msg
+#   QuadFlightMode.msg
+#   State.msg
+#   CommAge.msg
+#   IMU.msg
+#   SMCData.msg
+#   Motors.msg
+#   VioFilterState.msg
+#   TimeFilter.msg
+# )
+
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -64,11 +73,28 @@ add_message_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-  nav_msgs
+# ROS1
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+#   geometry_msgs
+#   nav_msgs
+# )
+
+# ROS2
+rosidl_generateg_interfaces(${PROJECT_NAME}
+  "ControlLog.msg"
+  "AttitudeCommand.msg"
+  "Goal.msg"
+  "QuadFlightMode.msg"
+  "State.msg"
+  "CommAge.msg"
+  "IMU.msg"
+  "SMCData.msg"
+  "Motors.msg"
+  "VioFilterState.msg"
+  "TimeFilter.msg"
+  DEPENDENCIES std_msgs geometry_msgs nav_msgs 
 )
 
 ###################################
@@ -80,10 +106,24 @@ generate_messages(
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES outer_loop
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
-   CATKIN_DEPENDS message_runtime std_msgs geometry_msgs nav_msgs actionlib_msgs std_srvs
+
+#ROS1:
+# catkin_package(
+# #  INCLUDE_DIRS include
+# #  LIBRARIES outer_loop
+# #  CATKIN_DEPENDS other_catkin_pkg
+# #  DEPENDS system_lib
+#    CATKIN_DEPENDS message_runtime std_msgs geometry_msgs nav_msgs actionlib_msgs std_srvs
+# )
+
+#ROS2:
+ament_export_dependencies(
+  message_runtime
+  std_msgs
+  geometry_msgs
+  nav_msgs
+  actionlib_msgs
+  std_srvs 
 )
+
+ament_package()
