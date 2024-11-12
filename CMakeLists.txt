@@ -10,6 +10,7 @@ project(snapstack_msgs)
 #   std_srvs
 # )
 
+find_package(ament_cmake)
 find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
